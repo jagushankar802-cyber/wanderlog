@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -6,16 +10,27 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Work Sans', sans-serif;
-    background-color: #f5f1e8;
-    color: #24352b;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: #fff8ed;
+    color: #173f3a;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     padding: 24px 7%;
+    position: relative;
+    z-index: 10;
 }
 
 nav {
@@ -26,115 +41,250 @@ nav {
 
 .logo {
     font-family: 'Fraunces', serif;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
-    color: #24352b;
+    color: #173f3a;
     text-decoration: none;
+    position: relative;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ff7657;
+    border-radius: 50%;
+    top: 2px;
+    right: -12px;
 }
 
 nav ul {
     display: flex;
-    gap: 35px;
+    align-items: center;
+    gap: 34px;
     list-style: none;
 }
 
 nav ul a {
-    color: #24352b;
+    color: #173f3a;
     text-decoration: none;
     font-family: 'Space Mono', monospace;
-    font-size: 14px;
+    font-size: 13px;
+    transition: color 0.3s ease;
 }
 
 nav ul a:hover {
-    text-decoration: underline;
+    color: #ff7657;
 }
 
-/* Hero */
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
-    min-height: 75vh;
-    padding: 80px 7%;
+    min-height: 76vh;
+    padding: 60px 7% 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative sun */
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    background: #ffd166;
+    border-radius: 50%;
+    right: 7%;
+    top: 50px;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* Decorative blob */
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 180px;
+    background: #8bd3c7;
+    border-radius: 50% 50% 45% 55%;
+    right: 20%;
+    bottom: 20px;
+    z-index: -2;
+    transform: rotate(-15deg);
+}
+
+
+/* Small travel label */
+
+.hero::marker {
+    display: none;
 }
 
 .hero h1 {
     font-family: 'Fraunces', serif;
-    font-size: clamp(48px, 7vw, 90px);
-    line-height: 1;
+    font-size: clamp(52px, 8vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -2px;
     max-width: 850px;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+    color: #173f3a;
+}
+
+.hero h1::first-line {
+    color: #173f3a;
 }
 
 .hero p {
     font-size: 19px;
     line-height: 1.7;
-    max-width: 600px;
-    margin-bottom: 35px;
+    max-width: 570px;
+    margin-bottom: 36px;
+    color: #42645f;
 }
+
+
+/* =========================
+   CTA BUTTON
+========================= */
 
 .cta-button {
     display: inline-block;
     width: fit-content;
-    padding: 15px 28px;
-    background-color: #24352b;
-    color: #f5f1e8;
+    padding: 16px 27px;
+    background: #ff7657;
+    color: white;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 50px;
     font-family: 'Space Mono', monospace;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(255, 118, 87, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-    opacity: 0.85;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(255, 118, 87, 0.35);
 }
 
-/* Footer */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    padding: 25px 7%;
-    border-top: 1px solid #c9c3b7;
+    padding: 24px 7%;
+    border-top: 1px solid #eadcc9;
+    background: #fff4df;
 }
 
 footer p {
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
+    color: #55736e;
 }
-/* Mobile */
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
 
 @media (max-width: 768px) {
 
     header {
-        padding: 20px 5%;
+        padding: 20px 6%;
     }
 
     nav {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 22px;
     }
 
     nav ul {
-        gap: 20px;
+        gap: 18px;
         flex-wrap: wrap;
     }
 
     .hero {
-        min-height: 70vh;
-        padding: 60px 5%;
+        min-height: 72vh;
+        padding: 55px 6% 70px;
+    }
+
+    .hero::before {
+        width: 220px;
+        height: 220px;
+        right: -60px;
+        top: 35px;
+    }
+
+    .hero::after {
+        width: 150px;
+        height: 110px;
+        right: 5%;
+        bottom: 20px;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 52px;
+        letter-spacing: -1px;
+        max-width: 100%;
     }
 
     .hero p {
         font-size: 16px;
+        max-width: 100%;
+    }
+
+    .cta-button {
+        padding: 14px 23px;
     }
 
     footer {
-        padding: 20px 5%;
+        padding: 20px 6%;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 26px;
+    }
+
+    nav ul {
+        gap: 14px;
+    }
+
+    nav ul a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero::before {
+        width: 170px;
+        height: 170px;
+        right: -70px;
     }
 }
