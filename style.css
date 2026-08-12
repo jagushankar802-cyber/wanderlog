@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap');
 
+
 /* =========================
    RESET
 ========================= */
@@ -16,66 +17,111 @@ html {
 
 body {
     font-family: 'Work Sans', sans-serif;
-    background: #fff8ed;
-    color: #173f3a;
-    min-height: 100vh;
+    background: #fffaf1;
+    color: #102d4a;
     overflow-x: hidden;
 }
 
 
 /* =========================
-   HEADER
+   NAVBAR
 ========================= */
 
 header {
-    padding: 24px 7%;
-    position: relative;
-    z-index: 10;
+    height: 78px;
+    padding: 18px 4%;
+    background: #fffdf9;
+    border-bottom: 1px solid #eee7dc;
 }
 
 nav {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
     font-family: 'Fraunces', serif;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
-    color: #173f3a;
+    color: #102d4a;
     text-decoration: none;
-    position: relative;
+    letter-spacing: -1.5px;
 }
 
-.logo::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #ff7657;
-    border-radius: 50%;
-    top: 2px;
-    right: -12px;
+.logo span,
+.footer-logo span {
+    color: #ff4f1f;
 }
 
-nav ul {
+.nav-right {
     display: flex;
     align-items: center;
-    gap: 34px;
+    gap: 45px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
     list-style: none;
 }
 
-nav ul a {
-    color: #173f3a;
+.nav-links a {
+    position: relative;
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
+    color: #102d4a;
+    font-size: 14px;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
-nav ul a:hover {
-    color: #ff7657;
+.nav-links a:hover {
+    color: #ff4f1f;
+}
+
+.nav-links a.active {
+    color: #ff4f1f;
+}
+
+.nav-links a.active::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -22px;
+
+    height: 3px;
+    background: #ff4f1f;
+    border-radius: 5px;
+}
+
+
+/* NAV BUTTON */
+
+.nav-button {
+    padding: 13px 22px;
+
+    background: #ff4f1f;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow: 0 7px 18px rgba(255, 79, 31, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(255, 79, 31, 0.28);
 }
 
 
@@ -84,97 +130,371 @@ nav ul a:hover {
 ========================= */
 
 .hero {
-    min-height: 76vh;
-    padding: 60px 7% 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
+    width: 100%;
+    max-width: 1450px;
 
-/* Decorative sun */
+    height: calc(100vh - 78px);
 
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 360px;
-    height: 360px;
-    background: #ffd166;
-    border-radius: 50%;
-    right: 7%;
-    top: 50px;
-    z-index: -1;
-    opacity: 0.9;
-}
+    margin: 0 auto;
 
-/* Decorative blob */
+    padding: 25px 4%;
 
-.hero::after {
-    content: '';
-    position: absolute;
-    width: 240px;
-    height: 180px;
-    background: #8bd3c7;
-    border-radius: 50% 50% 45% 55%;
-    right: 20%;
-    bottom: 20px;
-    z-index: -2;
-    transform: rotate(-15deg);
-}
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
 
+    align-items: center;
 
-/* Small travel label */
-
-.hero::marker {
-    display: none;
-}
-
-.hero h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(52px, 8vw, 100px);
-    line-height: 0.95;
-    letter-spacing: -2px;
-    max-width: 850px;
-    margin-bottom: 30px;
-    color: #173f3a;
-}
-
-.hero h1::first-line {
-    color: #173f3a;
-}
-
-.hero p {
-    font-size: 19px;
-    line-height: 1.7;
-    max-width: 570px;
-    margin-bottom: 36px;
-    color: #42645f;
+    gap: 25px;
 }
 
 
 /* =========================
-   CTA BUTTON
+   HERO CONTENT
 ========================= */
 
-.cta-button {
-    display: inline-block;
-    width: fit-content;
-    padding: 16px 27px;
-    background: #ff7657;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    font-weight: 700;
-    box-shadow: 0 8px 20px rgba(255, 118, 87, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-content {
+    position: relative;
+    z-index: 5;
 }
 
-.cta-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(255, 118, 87, 0.35);
+.eyebrow {
+    margin-bottom: 18px;
+
+    font-family: 'Space Mono', monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    color: #0875df;
+}
+
+.eyebrow span {
+    color: #ff4f1f;
+    margin: 0 4px;
+}
+
+.hero h1 {
+    max-width: 650px;
+
+    font-family: 'Fraunces', serif;
+
+    font-size: clamp(52px, 5.2vw, 76px);
+
+    line-height: 0.96;
+
+    letter-spacing: -2.5px;
+
+    color: #102d4a;
+}
+
+.hero h1 strong {
+    display: block;
+    color: #ff4f1f;
+    font-weight: 700;
+}
+
+.hero-content > p {
+    max-width: 540px;
+
+    margin-top: 20px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #385875;
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 24px;
+}
+
+.primary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 15px 23px;
+
+    background: #ff4f1f;
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 9px 22px rgba(255, 79, 31, 0.23);
+
+    transition: all 0.3s ease;
+}
+
+.primary-button span {
+    font-size: 21px;
+    transition: transform 0.3s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+}
+
+.primary-button:hover span {
+    transform: translateX(4px);
+}
+
+.learn-more {
+    color: #0875df;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border-bottom: 2px solid #0875df;
+
+    padding-bottom: 3px;
+}
+
+.learn-more:hover {
+    color: #ff4f1f;
+    border-color: #ff4f1f;
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    position: relative;
+
+    height: 100%;
+    max-height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* YELLOW SUN */
+
+.sun {
+    position: absolute;
+
+    width: 245px;
+    height: 245px;
+
+    background: #ffc83d;
+
+    border-radius: 50%;
+
+    top: 0;
+    right: 50px;
+
+    z-index: 0;
+}
+
+
+/* DESTINATION CARD */
+
+.destination-card {
+    position: relative;
+
+    width: min(100%, 420px);
+    height: 435px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    z-index: 3;
+
+    box-shadow: 0 20px 45px rgba(16, 45, 74, 0.18);
+
+    transition: transform 0.4s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* IMAGE OVERLAY */
+
+.card-gradient {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.02) 35%,
+        rgba(0, 0, 0, 0.68) 100%
+    );
+
+    z-index: 1;
+}
+
+
+/* LABEL */
+
+.destination-label {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    z-index: 5;
+
+    padding: 9px 13px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 6px;
+
+    color: #0875df;
+
+    font-family: 'Space Mono', monospace;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* CARD INFO */
+
+.destination-info {
+    position: absolute;
+
+    left: 25px;
+    bottom: 23px;
+
+    z-index: 5;
+
+    color: #ffffff;
+}
+
+.destination-info h2 {
+    font-family: 'Fraunces', serif;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    margin-bottom: 9px;
+}
+
+.destination-info p {
+    font-family: 'Space Mono', monospace;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.destination-info p span {
+    margin-right: 5px;
+}
+
+
+/* CARD ARROW */
+
+.card-arrow {
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    color: #0875df;
+
+    font-size: 21px;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.airplane {
+    position: absolute;
+
+    top: 45px;
+    right: 0;
+
+    z-index: 4;
+
+    color: #ff4f1f;
+
+    font-size: 28px;
+
+    transform: rotate(-15deg);
+}
+
+.palm {
+    position: absolute;
+
+    right: -18px;
+    bottom: 5px;
+
+    z-index: 5;
+
+    font-size: 70px;
+
+    transform: rotate(-8deg);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: none;
 }
 
 
@@ -183,75 +503,177 @@ nav ul a:hover {
 ========================= */
 
 footer {
-    padding: 24px 7%;
-    border-top: 1px solid #eadcc9;
-    background: #fff4df;
-}
-
-footer p {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: #55736e;
+    display: none;
 }
 
 
 /* =========================
-   MOBILE RESPONSIVENESS
+   LAPTOP HEIGHT FIX
 ========================= */
 
-@media (max-width: 768px) {
+@media (min-width: 801px) and (max-height: 750px) {
 
-    header {
-        padding: 20px 6%;
+    .hero {
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 22px;
+    .hero h1 {
+        font-size: 58px;
     }
 
-    nav ul {
-        gap: 18px;
-        flex-wrap: wrap;
+    .hero-content > p {
+        margin-top: 15px;
+    }
+
+    .hero-buttons {
+        margin-top: 18px;
+    }
+
+    .hero-visual {
+        max-height: 420px;
+    }
+
+    .destination-card {
+        height: 380px;
+    }
+
+    .sun {
+        width: 210px;
+        height: 210px;
+    }
+
+    .destination-info h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) and (min-width: 801px) {
+
+    .nav-right {
+        gap: 25px;
+    }
+
+    .nav-links {
+        gap: 20px;
     }
 
     .hero {
-        min-height: 72vh;
-        padding: 55px 6% 70px;
+        grid-template-columns: 1fr 0.8fr;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
-    .hero::before {
-        width: 220px;
-        height: 220px;
-        right: -60px;
-        top: 35px;
+    .hero h1 {
+        font-size: 55px;
     }
 
-    .hero::after {
-        width: 150px;
-        height: 110px;
-        right: 5%;
-        bottom: 20px;
+    .destination-card {
+        width: 360px;
+        height: 390px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        height: auto;
+        padding: 18px 6%;
+    }
+
+    nav {
+        height: auto;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 29px;
+    }
+
+    .nav-right {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .nav-links a.active::after {
+        bottom: -10px;
+    }
+
+    .nav-button {
+        padding: 10px 13px;
+        font-size: 10px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 0;
+
+        grid-template-columns: 1fr;
+
+        padding: 45px 6% 55px;
+
+        gap: 40px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
     }
 
     .hero h1 {
         font-size: 52px;
-        letter-spacing: -1px;
-        max-width: 100%;
+        letter-spacing: -1.5px;
     }
 
-    .hero p {
-        font-size: 16px;
-        max-width: 100%;
+    .hero-content > p {
+        font-size: 15px;
     }
 
-    .cta-button {
-        padding: 14px 23px;
+    .hero-visual {
+        height: 430px;
+        max-height: none;
     }
 
-    footer {
-        padding: 20px 6%;
+    .destination-card {
+        width: min(100%, 400px);
+        height: 410px;
+    }
+
+    .sun {
+        width: 220px;
+        height: 220px;
+    }
+
+    .palm {
+        font-size: 60px;
     }
 }
 
@@ -262,29 +684,77 @@ footer p {
 
 @media (max-width: 480px) {
 
-    .logo {
-        font-size: 26px;
+    .nav-right {
+        align-items: center;
     }
 
-    nav ul {
-        gap: 14px;
+    .nav-links {
+        gap: 12px;
     }
 
-    nav ul a {
-        font-size: 11px;
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .nav-button {
+        font-size: 9px;
+        padding: 9px 11px;
     }
 
     .hero {
-        padding-top: 45px;
+        padding-top: 35px;
     }
 
     .hero h1 {
-        font-size: 45px;
+        font-size: 44px;
     }
 
-    .hero::before {
-        width: 170px;
-        height: 170px;
-        right: -70px;
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        gap: 18px;
+    }
+
+    .primary-button {
+        padding: 13px 17px;
+        font-size: 11px;
+    }
+
+    .learn-more {
+        font-size: 11px;
+    }
+
+    .hero-visual {
+        height: 380px;
+    }
+
+    .destination-card {
+        height: 365px;
+    }
+
+    .sun {
+        width: 180px;
+        height: 180px;
+    }
+
+    .destination-info h2 {
+        font-size: 31px;
+    }
+
+    .destination-info p {
+        font-size: 9px;
+    }
+
+    .card-arrow {
+        width: 42px;
+        height: 42px;
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .palm {
+        font-size: 52px;
     }
 }
