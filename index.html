@@ -12,77 +12,123 @@
 
 <body>
 
-    <!-- NAVBAR -->
-    <header>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="site-header">
+
         <nav>
 
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 Wanderlog<span>.</span>
             </a>
 
-            <div class="nav-right">
+            <div class="nav-pill">
 
                 <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="destinations.html">Destinations</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
 
-                <a href="destinations.html" class="primary-button">
-                    Start Exploring
-                    <span>→</span>
-                </a>
+                    <li>
+                        <a href="index.html" class="active">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="destinations.html">
+                            Destinations
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                </ul>
 
             </div>
 
         </nav>
+
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         MAIN HERO
+    ========================== -->
+
     <main>
 
         <section class="hero">
 
-            <!-- LEFT CONTENT -->
+            <!-- LEFT SIDE -->
+
             <div class="hero-content">
 
                 <div class="eyebrow">
-                    TRAVEL <span>•</span> DISCOVER <span>•</span> REMEMBER
+                    TRAVEL
+                    <span>•</span>
+                    DISCOVER
+                    <span>•</span>
+                    REMEMBER
                 </div>
+
 
                 <h1>
                     Discover places
                     <strong>worth remembering.</strong>
                 </h1>
 
-                <p>
+
+                <p class="hero-description">
                     Explore beautiful destinations, document your journeys,
                     and keep your travel memories in one place.
                 </p>
 
-                <div class="hero-buttons">
 
-                    <a href="#" class="primary-button">
-                        Start Exploring
-                        <span>→</span>
-                    </a>
+                <!-- Small useful information row -->
 
-                    <a href="#features" class="learn-more">
-                        Learn more
-                    </a>
+                <div class="hero-meta">
+
+                    <div class="meta-item">
+                        <strong>01</strong>
+                        <span>Discover</span>
+                    </div>
+
+                    <div class="meta-divider"></div>
+
+                    <div class="meta-item">
+                        <strong>02</strong>
+                        <span>Plan</span>
+                    </div>
+
+                    <div class="meta-divider"></div>
+
+                    <div class="meta-item">
+                        <strong>03</strong>
+                        <span>Remember</span>
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <!-- RIGHT VISUAL -->
+            <!-- =========================
+                 RIGHT SIDE VISUAL
+            ========================== -->
+
             <div class="hero-visual">
 
                 <div class="sun"></div>
 
-                <div class="airplane">✈</div>
+
+                <div class="airplane">
+                    ✈
+                </div>
+
 
                 <div class="destination-card">
 
@@ -91,27 +137,35 @@
                         alt="Beautiful travel destination"
                     >
 
+
                     <div class="card-gradient"></div>
+
 
                     <div class="destination-label">
                         NEXT ADVENTURE
                     </div>
 
+
                     <div class="destination-info">
 
-                        <h2>Ocean Escape</h2>
+                        <h2>
+                            Ocean Escape
+                        </h2>
 
                         <p>
-                            <span>●</span> Bali, Indonesia
+                            <span>●</span>
+                            Bali, Indonesia
                         </p>
 
                     </div>
+
 
                     <div class="card-arrow">
                         ↗
                     </div>
 
                 </div>
+
 
                 <div class="palm">
                     🌴
@@ -122,66 +176,57 @@
         </section>
 
 
-        <!-- FEATURES -->
-        <section class="features" id="features">
+        <!-- =========================
+             BOTTOM TRAVEL STRIP
+        ========================== -->
 
-            <div class="feature">
+        <section class="travel-strip">
 
-                <div class="feature-icon discover-icon">
-                    ◈
-                </div>
-
-                <div class="feature-text">
-                    <h3>Discover</h3>
-
-                    <p>
-                        Find beautiful destinations and places
-                        worth adding to your journey.
-                    </p>
-                </div>
-
+            <div class="strip-label">
+                <span class="strip-dot"></span>
+                YOUR NEXT JOURNEY
             </div>
 
 
-            <div class="feature">
-
-                <div class="feature-icon document-icon">
-                    ●
-                </div>
-
-                <div class="feature-text">
-                    <h3>Document</h3>
-
-                    <p>
-                        Keep your trips organized and capture
-                        the details that make them special.
-                    </p>
-                </div>
-
+            <div class="strip-destination">
+                <strong>Go somewhere.</strong>
+                Make memories.
             </div>
 
 
-            <div class="feature">
+            <div class="strip-stats">
 
-                <div class="feature-icon remember-icon">
-                    ♡
+                <div>
+                    <strong>∞</strong>
+                    <span>Possibilities</span>
                 </div>
 
-                <div class="feature-text">
-                    <h3>Remember</h3>
+                <div>
+                    <strong>✦</strong>
+                    <span>New memories</span>
+                </div>
 
-                    <p>
-                        Build a personal collection of journeys
-                        you can come back to anytime.
-                    </p>
+                <div>
+                    <strong>↗</strong>
+                    <span>New adventures</span>
                 </div>
 
             </div>
 
         </section>
 
+
+        <!-- Hidden anchor target for About -->
+
+        <section id="about" class="about-anchor">
+        </section>
+
     </main>
 
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
@@ -190,10 +235,11 @@
         </div>
 
         <p>
-            © 2026 Wanderlog. All rights reserved.
+            © 2026 Wanderlog
         </p>
 
     </footer>
+
 
 </body>
 
