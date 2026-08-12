@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wanderlog | Destinations</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+
+            <a href="index.html" class="logo">
+                Wanderlog<span>.</span>
+            </a>
+
+            <div class="nav-right">
+
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="destinations.html" class="active">
+                            Destinations
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+
+                <a href="#add-trip" class="nav-button">
+                    + Add Trip
+                </a>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- DESTINATIONS PAGE -->
+
+    <main class="destinations-page">
+
+        <!-- PAGE INTRO -->
+
+        <section class="destinations-header">
+
+            <div>
+
+                <div class="eyebrow">
+                    YOUR JOURNEYS
+                </div>
+
+                <h1>
+                    Places worth
+                    <strong>remembering.</strong>
+                </h1>
+
+                <p>
+                    Keep track of the destinations you've visited,
+                    the places you're planning to explore, and the
+                    memories you want to keep.
+                </p>
+
+            </div>
+
+            <div class="trip-count">
+                <span>00</span>
+                <small>TRIPS SAVED</small>
+            </div>
+
+        </section>
+
+
+        <!-- ADD TRIP -->
+
+        <section class="add-trip-section" id="add-trip">
+
+            <div class="form-heading">
+
+                <div>
+                    <span class="section-number">01</span>
+
+                    <h2>
+                        Add a new trip
+                    </h2>
+
+                    <p>
+                        Start documenting your next adventure.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="trip-form" class="trip-form">
+
+                <div class="form-group">
+
+                    <label for="trip-title">
+                        Trip title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trip-title"
+                        name="title"
+                        placeholder="e.g. Summer Escape"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="trip-destination">
+                        Destination
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trip-destination"
+                        name="destination"
+                        placeholder="e.g. Bali, Indonesia"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="trip-date">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="trip-date"
+                        name="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group form-group-full">
+
+                    <label for="trip-notes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="trip-notes"
+                        name="notes"
+                        rows="4"
+                        placeholder="What makes this trip special?"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="save-trip-button"
+                    >
+                        Save Trip
+                        <span>→</span>
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="clear-button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- DESTINATIONS -->
+
+        <section class="saved-trips-section">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <h2>
+                        Your destinations
+                    </h2>
+
+                </div>
+
+                <span class="trip-status">
+                    YOUR COLLECTION
+                </span>
+
+            </div>
+
+
+            <!-- JS WILL RENDER TRIPS HERE -->
+
+            <div
+                id="destinations-grid"
+                class="destinations-grid"
+            >
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="empty-state"
+                class="empty-state"
+            >
+
+                <div class="empty-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Your journey starts here.
+                </h3>
+
+                <p>
+                    Add your first destination above and
+                    start building your personal travel collection.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Wanderlog<span>.</span>
+        </div>
+
+        <p>
+            © 2026 Wanderlog. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

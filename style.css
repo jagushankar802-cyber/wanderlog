@@ -758,3 +758,512 @@ footer {
         font-size: 52px;
     }
 }
+
+/* =====================================================
+   DESTINATIONS PAGE
+===================================================== */
+
+.destinations-page {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 55px 5% 80px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.destinations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 55px;
+}
+
+.destinations-header h1 {
+    max-width: 700px;
+    margin-top: 12px;
+
+    font-family: 'Fraunces', serif;
+    font-size: clamp(52px, 6vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -2.5px;
+
+    color: #102d4a;
+}
+
+.destinations-header h1 strong {
+    display: block;
+    color: #ff4f1f;
+}
+
+.destinations-header p {
+    max-width: 600px;
+    margin-top: 22px;
+
+    color: #527087;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.trip-count {
+    min-width: 145px;
+    padding: 20px;
+
+    background: #ffc83d;
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.trip-count span {
+    display: block;
+
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    line-height: 1;
+
+    color: #102d4a;
+}
+
+.trip-count small {
+    display: block;
+    margin-top: 8px;
+
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    color: #102d4a;
+}
+
+
+/* =========================
+   ADD TRIP SECTION
+========================= */
+
+.add-trip-section {
+    padding: 38px;
+
+    background: #fff3d8;
+
+    border: 1px solid #eadcc7;
+    border-radius: 18px;
+
+    margin-bottom: 70px;
+}
+
+.form-heading {
+    margin-bottom: 30px;
+}
+
+.section-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #0875df;
+}
+
+.form-heading h2,
+.saved-trips-section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    line-height: 1;
+
+    color: #102d4a;
+}
+
+.form-heading p {
+    margin-top: 8px;
+
+    color: #60798a;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.trip-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #102d4a;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dbcdb7;
+    border-radius: 9px;
+
+    background: #fffdf9;
+
+    color: #102d4a;
+
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 105px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0875df;
+
+    box-shadow: 0 0 0 3px rgba(8, 117, 223, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9aa8b0;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 5px;
+}
+
+.save-trip-button {
+    border: none;
+
+    padding: 14px 22px;
+
+    background: #ff4f1f;
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(255, 79, 31, 0.2);
+
+    transition: all 0.25s ease;
+}
+
+.save-trip-button span {
+    margin-left: 12px;
+    font-size: 17px;
+}
+
+.save-trip-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 11px 22px rgba(255, 79, 31, 0.28);
+}
+
+.clear-button {
+    border: none;
+    background: transparent;
+
+    color: #60798a;
+
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    color: #ff4f1f;
+}
+
+
+/* =========================
+   SAVED TRIPS
+========================= */
+
+.saved-trips-section {
+    margin-bottom: 40px;
+}
+
+.section-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.section-top h2 {
+    margin-top: 5px;
+}
+
+.trip-status {
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    background: #dff5f0;
+
+    color: #087c70;
+
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   DESTINATION GRID
+========================= */
+
+.destinations-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    padding: 65px 25px;
+
+    border: 1px dashed #d9cbb6;
+    border-radius: 15px;
+
+    text-align: center;
+
+    background: #fffdf9;
+}
+
+.empty-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #ffc83d;
+
+    color: #102d4a;
+
+    font-size: 22px;
+}
+
+.empty-state h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+
+    color: #102d4a;
+}
+
+.empty-state p {
+    max-width: 450px;
+
+    margin: 10px auto 0;
+
+    color: #718696;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESTINATIONS PAGE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .destinations-page {
+        padding: 45px 6% 60px;
+    }
+
+    .destinations-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .trip-count {
+        align-self: flex-start;
+    }
+
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .destinations-page {
+        padding: 35px 6% 50px;
+    }
+
+    .destinations-header {
+        margin-bottom: 40px;
+    }
+
+    .destinations-header h1 {
+        font-size: 50px;
+    }
+
+    .add-trip-section {
+        padding: 25px 20px;
+    }
+
+    .trip-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-full {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        grid-column: auto;
+    }
+
+    .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* ==========================================
+   DESTINATION CARDS
+========================================== */
+
+.destination-card-item {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #eadcc7;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(16, 45, 74, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.destination-card-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(16, 45, 74, 0.11);
+}
+
+.destination-card-item > img {
+    width: 100%;
+    height: 190px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.destination-card-content {
+    padding: 22px;
+}
+
+.card-date {
+    font-family: 'Space Mono', monospace;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #0875df;
+}
+
+.destination-card-content h3 {
+    margin: 8px 0 7px;
+
+    font-family: 'Fraunces', serif;
+    font-size: 27px;
+    line-height: 1.1;
+
+    color: #102d4a;
+}
+
+.card-destination {
+    margin: 0;
+
+    color: #ff4f1f;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.card-notes {
+    margin-top: 14px;
+
+    color: #718696;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
