@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wanderlog | Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .profile-page {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 55px 5% 70px;
+        }
+
+        .profile-header {
+            background: #123b55;
+            color: white;
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 55px;
+        }
+
+        .profile-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #ffc83d;
+            margin-bottom: 12px;
+        }
+
+        .profile-header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(48px, 6vw, 72px);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .profile-header h1 strong {
+            color: #ff5b35;
+        }
+
+        .profile-header p {
+            color: #c3d9e3;
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 550px;
+        }
+
+        .profile-trips {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .profile-trips .section-top {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .profile-trips .section-number {
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: #ff5b35;
+        }
+
+        .profile-trips h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 34px;
+            color: #123b55;
+        }
+
+        .profile-status {
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            color: #0875df;
+            background: #e9f4f1;
+            padding: 9px 12px;
+            border-radius: 8px;
+        }
+
+        .profile-trips-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            align-items: start;
+        }
+
+        .profile-trip-card {
+            width: 100%;
+            min-width: 0;
+            overflow: hidden;
+            background: white;
+            border: 1px solid #e1e9e6;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(18, 59, 85, 0.07);
+        }
+
+        .profile-trip-card img {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .profile-trip-content {
+            padding: 22px;
+        }
+
+        .profile-trip-date {
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            color: #0875df;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .profile-trip-content h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 27px;
+            line-height: 1.1;
+            color: #123b55;
+            margin-bottom: 8px;
+        }
+
+        .profile-trip-destination {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: #ff5b35;
+            margin-bottom: 12px;
+        }
+
+        .profile-trip-notes {
+            font-size: 13px;
+            line-height: 1.55;
+            color: #537789;
+        }
+
+        .profile-empty {
+            text-align: center;
+            padding: 70px 25px;
+            border: 2px dashed #cbdcd8;
+            border-radius: 20px;
+        }
+
+        .profile-empty h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            color: #123b55;
+            margin-bottom: 8px;
+        }
+
+        .profile-empty p {
+            color: #537789;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .profile-trips-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .profile-trips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-header {
+                padding: 30px 25px;
+            }
+
+            .profile-trips .section-top {
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <a href="index.html" class="logo">
+                Wanderlog<span>.</span>
+            </a>
+
+            <div class="nav-right">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="destinations.html">
+                            Destinations
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="profile.html" class="active">
+                            Profile
+                        </a>
+                    </li>
+
+                </ul>
+
+                <a href="destinations.html#add-trip" class="nav-button">
+                    + Add Trip
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main class="profile-page">
+
+        <section class="profile-header">
+
+            <div>
+
+                <div class="profile-label">
+                    WANDERLOG PROFILE
+                </div>
+
+                <h1>
+                    <span id="profile-user-name">My</span> travel
+                    <strong>journal.</strong>
+                </h1>
+
+                <p>
+                    A collection of the places you've saved,
+                    the journeys you've planned, and the memories
+                    you've started creating.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="profile-trips">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <h2>
+                        My journeys
+                    </h2>
+
+                </div>
+
+                <span class="profile-status">
+                    <span id="profile-trip-count">00</span> TRIPS SAVED
+                </span>
+
+            </div>
+
+
+            <div
+                id="profile-trips-grid"
+                class="profile-trips-grid"
+            ></div>
+
+
+            <div
+                id="profile-empty"
+                class="profile-empty"
+                style="display: none;"
+            >
+
+                <h3>
+                    No journeys yet.
+                </h3>
+
+                <p>
+                    Add a destination and it will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer style="
+        display: block;
+        margin: 30px 4.5% 0;
+        padding: 25px 0;
+        border-top: 1px solid #dce6e2;
+        text-align: center;
+        color: #537789;
+    ">
+
+        <div class="footer-logo">
+            Wanderlog<span>.</span>
+        </div>
+
+        <p>
+            © 2026 Wanderlog. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const profileGrid =
+            document.getElementById("profile-trips-grid");
+
+        const profileEmpty =
+            document.getElementById("profile-empty");
+
+        const profileTripCount =
+            document.getElementById("profile-trip-count");
+
+
+        const trips =
+            JSON.parse(
+                localStorage.getItem("wanderlogTrips") || "[]"
+            );
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const profileUser =
+            urlParams.get("user") || "traveler";
+
+        const profileUserName =
+            document.getElementById("profile-user-name");
+
+        profileUserName.textContent =
+            profileUser;
+
+
+        if (trips.length === 0) {
+
+            profileEmpty.style.display = "block";
+
+        }
+
+
+        trips.forEach(function (trip) {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "profile-trip-card";
+
+
+            const image =
+                trip.coverImage ||
+                "assets/travel.png";
+
+
+            const formattedDate =
+                new Date(trip.date).toLocaleDateString(
+                    "en-US",
+                    {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
+                    }
+                );
+
+
+            card.innerHTML = `
+
+                <img
+                    src="${image}"
+                    alt="${trip.destination}"
+                    onerror="this.src='assets/travel.png'"
+                >
+
+                <div class="profile-trip-content">
+
+                    <span class="profile-trip-date">
+                        ${formattedDate}
+                    </span>
+
+                    <h3>
+                        ${trip.title}
+                    </h3>
+
+                    <p class="profile-trip-destination">
+                        ● ${trip.destination}
+                    </p>
+
+                    ${
+                        trip.notes
+                            ? `
+                                <p class="profile-trip-notes">
+                                    ${trip.notes}
+                                </p>
+                            `
+                            : ""
+                    }
+
+                </div>
+
+            `;
+
+
+            profileGrid.appendChild(card);
+
+        });
+
+
+        /* COUNT THE CARDS AFTER THEY ARE DISPLAYED */
+
+        profileTripCount.textContent =
+            String(profileGrid.children.length).padStart(2, "0");
+
+
+    </script>
+
+</body>
+
+</html>
