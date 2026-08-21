@@ -13,7 +13,9 @@
 <body>
 
     <!-- NAVBAR -->
+
     <header>
+
         <nav>
 
             <a href="index.html" class="logo">
@@ -23,8 +25,11 @@
             <div class="nav-right">
 
                 <ul class="nav-links">
+
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">
+                            Home
+                        </a>
                     </li>
 
                     <li>
@@ -34,8 +39,17 @@
                     </li>
 
                     <li>
-                        <a href="#">About</a>
+                        <a href="index.html#about">
+                            About
+                        </a>
                     </li>
+
+                    <li>
+                        <a href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+
                 </ul>
 
                 <a href="#add-trip" class="nav-button">
@@ -45,6 +59,7 @@
             </div>
 
         </nav>
+
     </header>
 
 
@@ -88,7 +103,10 @@
             <div class="form-heading">
 
                 <div>
-                    <span class="section-number">01</span>
+
+                    <span class="section-number">
+                        01
+                    </span>
 
                     <h2>
                         Add a new trip
@@ -97,6 +115,7 @@
                     <p>
                         Start documenting your next adventure.
                     </p>
+
                 </div>
 
             </div>
@@ -154,6 +173,62 @@
                 </div>
 
 
+                <div class="form-group">
+
+                    <label for="trip-photo">
+                        Cover Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="trip-photo"
+                        name="photo"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <!-- PHOTO PREVIEW -->
+
+                <div
+                    id="photo-preview"
+                    style="
+                        display: none;
+                        grid-column: 1 / -1;
+                        margin-top: 5px;
+                    "
+                >
+
+                    <p
+                        style="
+                            font-family: 'Space Mono', monospace;
+                            font-size: 10px;
+                            font-weight: 700;
+                            color: #0875df;
+                            margin-bottom: 8px;
+                        "
+                    >
+                        PHOTO PREVIEW
+                    </p>
+
+                    <img
+                        id="preview-image"
+                        src=""
+                        alt="Selected trip photo preview"
+                        style="
+                            display: block;
+                            width: 100%;
+                            max-width: 450px;
+                            height: 230px;
+                            object-fit: cover;
+                            border-radius: 16px;
+                        "
+                    >
+
+                </div>
+
+
                 <div class="form-group form-group-full">
 
                     <label for="trip-notes">
@@ -194,7 +269,7 @@
         </section>
 
 
-        <!-- DESTINATIONS -->
+        <!-- SAVED TRIPS -->
 
         <section class="saved-trips-section">
 
@@ -219,13 +294,10 @@
             </div>
 
 
-            <!-- JS WILL RENDER TRIPS HERE -->
-
             <div
                 id="destinations-grid"
                 class="destinations-grid"
-            >
-            </div>
+            ></div>
 
 
             <!-- EMPTY STATE -->
